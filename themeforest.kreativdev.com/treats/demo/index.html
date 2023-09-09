@@ -205,6 +205,23 @@
                 </div>
             </div>
         </div>
+        <script>
+                     <?php
+            session_start();
+            if (isset($_SESSION['login_success']) && $_SESSION['login_success']) {
+                echo 'alert("Login successful!");';
+                $_SESSION['login_success'] = false; // Reset the session variable
+            }
+            ?>
+        
+        <?php
+    session_start();
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        echo "<p>Welcome, $username!</p>";
+    }
+    ?>
+        </script>
     </header>
     <!-- Header-area end -->
 
